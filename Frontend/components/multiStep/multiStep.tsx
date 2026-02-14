@@ -33,6 +33,21 @@ export function MultyStep() {
     if (nextPage < 3) setStep(nextPage);
   };
 
+
+  const [userData, serUserData]=useState([])
+
+  const handleData =async ()=> {
+    try{
+      const data = await fetch(`${process.env.NEXT_PUBLIC_APLI_URL}/users`)
+    
+     console.log(data.json());
+     
+    }catch(err){
+      console.error(err);
+      
+    }
+  }
+
   return (
     <>
       <form
@@ -121,6 +136,9 @@ export function MultyStep() {
             y: 50,
           }}
         ></motion.div>
+
+
+        <button className="bg-red-500" onClick={()=> handleData()}>Data indo</button>
       </form>
     </>
   );
