@@ -33,20 +33,17 @@ export function MultyStep() {
     if (nextPage < 3) setStep(nextPage);
   };
 
+  const [userData, serUserData] = useState([]);
 
-  const [userData, serUserData]=useState([])
+  const handleData = async () => {
+    try {
+      const data = await fetch(`${process.env.NEXT_PUBLIC_APLI_URL}/users`);
 
-  const handleData =async ()=> {
-    try{
-      const data = await fetch(`${process.env.NEXT_PUBLIC_APLI_URL}/users`)
-    
-     console.log(data.json());
-     
-    }catch(err){
+      console.log(data.json());
+    } catch (err) {
       console.error(err);
-      
     }
-  }
+  };
 
   return (
     <>
@@ -137,8 +134,9 @@ export function MultyStep() {
           }}
         ></motion.div>
 
-
-        <button className="bg-red-500" onClick={()=> handleData()}>Data indo</button>
+        <button className="bg-red-500" onClick={() => handleData()}>
+          Data indo
+        </button>
       </form>
     </>
   );

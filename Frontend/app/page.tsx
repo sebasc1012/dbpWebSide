@@ -1,7 +1,6 @@
 import { AddCard } from "@/components/addCard";
 import { Form } from "@/components/form";
-import { AppSidebar } from "@/components/sidebar/sidebar";
-import { SidebarTrigger } from "@/components/ui/sidebar";
+import { CompountComponent } from "@/components/tabs/CompountComponents";
 
 export default function Home() {
   return (
@@ -9,6 +8,7 @@ export default function Home() {
       <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Form />
         <AddCard />
+        <CompountComponent />
       </div>
     </div>
   );
