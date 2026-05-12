@@ -3,13 +3,15 @@
     "target": "ES2022",
     "module": "Node16",
     "moduleResolution": "Node16",
+    "moduleDetection": "auto",
     "outDir": "./build",
     "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": false
   },
-  "include": ["index.ts"],
+  "include": ["**/*.ts", "src/users/user.service.js"],
   "exclude": ["node_modules"]
 }
